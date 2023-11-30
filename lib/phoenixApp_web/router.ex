@@ -22,9 +22,10 @@ defmodule PhoenixAppWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", PhoenixAppWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", PhoenixAppWeb do
+    pipe_through :api
+    resources "/articles", ArticleController, except: [:new, :edit]
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:phoenixApp, :dev_routes) do
