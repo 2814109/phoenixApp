@@ -1,3 +1,13 @@
+# run log
+
+```
+mix phx.gen.html Blog Post posts body:string word_count:integer
+mix ecto.migrate
+
+mix phx.gen.html Message Letters letters body:string word_count:integer
+mix ecto.migrate
+```
+
 # create View
 
 ```
