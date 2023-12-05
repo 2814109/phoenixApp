@@ -1,0 +1,16 @@
+<.header>
+  Letters <%= @letters.id %>
+  <:subtitle>This is a letters record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/letters/#{@letters}/edit"}>
+      <.button>Edit letters</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Body"><%= @letters.body %></:item>
+  <:item title="Word count"><%= @letters.word_count %></:item>
+</.list>
+
+<.back navigate={~p"/letters"}>Back to letters</.back>

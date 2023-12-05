@@ -1,0 +1,24 @@
+<.header>
+  Listing Letters
+  <:actions>
+    <.link href={~p"/letters/new"}>
+      <.button>New Letters</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="letters" rows={@letters_collection} row_click={&JS.navigate(~p"/letters/#{&1}")}>
+  <:col :let={letters} label="Body"><%= letters.body %></:col>
+  <:col :let={letters} label="Word count"><%= letters.word_count %></:col>
+  <:action :let={letters}>
+    <div class="sr-only">
+      <.link navigate={~p"/letters/#{letters}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/letters/#{letters}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={letters}>
+    <.link href={~p"/letters/#{letters}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

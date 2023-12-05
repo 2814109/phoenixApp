@@ -19,6 +19,7 @@ defmodule PhoenixAppWeb.Router do
 
     get "/", PageController, :home
     resources "/posts", PostController
+    resources "/letters", LettersController
   end
 
   # Other scopes may use custom stacks.

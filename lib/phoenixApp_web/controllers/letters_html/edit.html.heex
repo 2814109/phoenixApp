@@ -1,0 +1,8 @@
+<.header>
+  Edit Letters <%= @letters.id %>
+  <:subtitle>Use this form to manage letters records in your database.</:subtitle>
+</.header>
+
+<.letters_form changeset={@changeset} action={~p"/letters/#{@letters}"} />
+
+<.back navigate={~p"/letters"}>Back to letters</.back>
